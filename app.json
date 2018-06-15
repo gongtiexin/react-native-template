@@ -1,0 +1,15 @@
+{
+  "expo": {
+    "name": "navi",
+    "icon": "./path/to/your/app-icon.png",
+    "version": "1.0.0",
+    "slug": "navi",
+    "sdkVersion": "27.0.0",
+    "ios": {
+      "bundleIdentifier": "gongtiexin.app.navi"
+    },
+    "android": {
+      "package": "gongtiexin.app.navi"
+    }
+  }
+}

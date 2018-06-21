@@ -1,15 +1,19 @@
-import React, {Component} from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { Button } from 'antd-mobile-rn';
+import React, { Component } from 'react';
+import { Dimensions, StyleSheet, View, WebView } from 'react-native';
+
+//获取设备的宽度和高度
+const { height: deviceHeight, width: deviceWidth } = Dimensions.get('window');
 
 export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-        <Button>start</Button>
+        <WebView
+          bounces={false}
+          scalesPageToFit={true}
+          style={styles.webView}
+          source={{ uri: "http://10.1.8.100:30000" }}
+        />
       </View>
     );
   }
@@ -18,8 +22,9 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  },
+  webView: {
+    width: deviceWidth,
+    height: deviceHeight,
   },
 });
